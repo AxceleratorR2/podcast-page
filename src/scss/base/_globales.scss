@@ -54,7 +54,7 @@ h1 {
 h2 {
   color: v.$secundario;
   font-size: 3.6rem;
-  //display: inline-block;
+  display: inline-block;
   margin-top: 5rem;
 
   @include m.tablet {

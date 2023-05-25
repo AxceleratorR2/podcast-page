@@ -1,4 +1,5 @@
 const { src, dest, watch, series } = require("gulp");
+const plumber = require("gulp-plumber");
 
 // CSS y SASS
 const sass = require("gulp-sass")(require("sass"));
@@ -13,6 +14,7 @@ const imagemin = require("gulp-imagemin");
 function css(done) {
   src("src/scss/app.scss")
     .pipe(sourcemaps.init())
+    .pipe(plumber())
     .pipe(sass())
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(sourcemaps.write("."))
